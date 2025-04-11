@@ -60,5 +60,5 @@ import skops.io as sio
 from skops.io import get_untrusted_types
 
 sio.dump(pipe, "Model/drug_pipeline.skops")
-trusted_types = get_untrusted_types()
+trusted_types = get_untrusted_types(file="Model/drug_pipeline.skops")
 pipe = sio.load("Model/drug_pipeline.skops", trusted=trusted_types)
