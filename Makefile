@@ -12,7 +12,8 @@ eval:
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
 	cml comment create report.md
 hf-login:
-	git pull origin update
+	git fetch origin update
+	git checkout origin/update
 	git switch update
 	pip install -U "huggingface_hub[cli]"
 	huggingface-cli login --token $(HF) --add-to-git-credential
