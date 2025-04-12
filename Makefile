@@ -30,7 +30,10 @@ deploy: hf-login push-hub
 update-branch:
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
-	git add App/drug_app.py App/requirements.txt App/README.md
-	git add Model/ Results/ report.md
-	git commit -am "Update with new results"
+	# Add files, ignore missing ones with || true
+	git add App/drug_app.py App/requirements.txt App/README.md || true
+	git add Model/ Results/ || true
+	git add report.md || true
+	git commit -am "Update with new results" || echo "Nothing to commit"
 	git push --force origin HEAD:update
+
