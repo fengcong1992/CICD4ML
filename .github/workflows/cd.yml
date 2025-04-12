@@ -11,12 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Debug file structure
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "List files:"
-          ls -R
+      - name: Debug File Structure (optional)
+        run: ls -R
+      - name: Update Branch
+        env:
+          USER_NAME: ${{ secrets.USER_NAME }}
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+        run: make update-branch USER_NAME=$USER_NAME USER_EMAIL=$USER_EMAIL
       - name: Deployment To Hugging Face
         env:
           HF: ${{ secrets.HF }}

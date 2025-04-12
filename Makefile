@@ -26,3 +26,11 @@ push-hub:
 	huggingface-cli upload joeyfeng/Drug_Classification ./Results /Metrics --repo-type=space --commit-message="Sync Results"
 
 deploy: hf-login push-hub
+
+update-branch:
+	git config --global user.name $(USER_NAME)
+	git config --global user.email $(USER_EMAIL)
+	git add App/drug_app.py App/requirements.txt App/README.md
+	git add Model/ Results/ report.md
+	git commit -am "Update with new results"
+	git push --force origin HEAD:update
