@@ -175,3 +175,4 @@ cython_debug/
 
 # keep ci clean
 Model/drug_pipeline.skops
+.DS_Store
