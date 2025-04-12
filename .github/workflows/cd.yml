@@ -11,7 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
+      - name: Debug file structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "List files:"
+          ls -R
       - name: Deployment To Hugging Face
         env:
           HF: ${{ secrets.HF }}

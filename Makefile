@@ -19,9 +19,9 @@ hf-login:
 	huggingface-cli login --token $(HF) --add-to-git-credential
 
 push-hub:
-	huggingface-cli upload joeyfeng/DrugClassification App/drug_app.py --repo-type=space --commit-message="Upload app"
-	huggingface-cli upload joeyfeng/DrugClassification App/requirements.txt --repo-type=space --commit-message="Upload requirements"
-	huggingface-cli upload joeyfeng/DrugClassification App/README.md --repo-type=space --commit-message="Upload app metadata"
+	huggingface-cli upload joeyfeng/Drug_Classification App/drug_app.py --repo-type=space --commit-message="Upload app"
+	huggingface-cli upload joeyfeng/Drug_Classification App/requirements.txt --repo-type=space --commit-message="Upload requirements"
+	huggingface-cli upload joeyfeng/Drug_Classification App/README.md --repo-type=space --commit-message="Upload app metadata"
 	huggingface-cli upload joeyfeng/Drug_Classification ./Model /Model --repo-type=space --commit-message="Sync Model"
 	huggingface-cli upload joeyfeng/Drug_Classification ./Results /Metrics --repo-type=space --commit-message="Sync Results"
 
